@@ -5,82 +5,88 @@ output: html_document
 
 ### Introduction
 
-An introduction of the data and a description of the trends/books/items you are choosing to analyze (and why!)
+The data that I will be analyzing is from the Seattle Public Library. 
+My main focus will be on analyzing the data of the types of books people 
+have checked out during the years of 2020-2022
 
 ### Summary Information
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
+I want to try and answer these following questions:
 
-These will likely be calculated using your DPLYR skills, answering questions such as:
+How did COVID affect the physical and digital checkout with books in 2020?
+- I will be first grouping the physical and digital types of books within a
+category, then I will calculate the total checkouts between the both within the
+year of 2020 by months, then I will plot the data with two line plots
 
-- What is the average number of checkouts for each item?
-- What is the month or year with the most/least checkouts for a book that you're interested in?
-- What is the month or year with the most/least checkouts for ebooks?
-- How has the number of print book checkouts changed over time?
+Who was the most popular author between 2020-2022?
+- I first grouped all the authors by the total amount of checkouts they have.
+Then I proceeded to sort the data to see who was in the top between 2020-2022. Then
+I only grabbed top 10 and plot the data with a column graph.
 
-Feel free to calculate and report values that you find relevant.
+What top 5 types of books was the most popular during 2020-2022?
+- I first filtered the data to only material types, then I sorted the data from the
+highest to lowest checkouts. To find the top 5 I grabbed only the first 5 within the
+sorted data then I plotted it in a piechart!
+
+Calculated values:
+1. Physical checkouts in 2020's months
+2. Digital checkouts in 2020's months
+3. All the author's checkouts in total
+4. Top ten authors within 2020-2022
+5. Top five most checked out material type books within 2020-2022
 
 ### The Dataset
 
 - Who collected/published the data?  
+  - Seattle Public Library published the data.
 - What are the parameters of the data (dates, number of checkouts, kinds of books, etc.)?
-- How was the data collected or generated?  
+  - Usage class, Checkout types, Material types, Check out year and month,
+    number of checkouts, title, ISBN, Author, Subjects, Publisher, and publication year
+- How was the data collected or generated?
+  - The data was collected.
 - Why was the data collected?  
-- What, if any, ethical questions do you need to consider when working with this data?  
+  - To determines the checkout data of the library.
+- What, if any, ethical questions do you need to consider when working with this data?
+  - There aren't really ethical questions dealing with this data in relation to my
+    research questions and curiosity.
 - What are possible limitations or problems with this data?   (at least 200 words)
+  - The possible limitation is that if there are trends on the data of certain books,
+    there won't be a big affect considering it's only from year 2020 to 2023. Another
+    would be that, when looking through the data, we see that some ISBN numbers don't
+    exists or that they don't have any which can mean that some books might be checked out
+    improperly because they usually would have to scan check the books. There also might
+    be some human errors when checking out the books.
 
 
-### First Trends Over Time Chart
-
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
-
-The first chart that you will create and include will show the trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, warning = FALSE, code = readLines("chart1_example.R")}
-```
-
-### Second Trends Over Time Chart
+### Digital vs Physical checkouts during 2020.
 
 Include a chart. Make sure to describe why you included the chart, and what patterns emerged
 
-The second chart that you will create and include will show another trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
+``````{r, echo = FALSE, results='hide', warning=FALSE, message=FALSE, code = readLines("chart1.R")}
+``````
 
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
+These two charts is being presented to explore the changes between the digital and physical 
+checkouts especially during the rise of COVID during 2020. 
 
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
+As we can see that the hardcover checkouts dropped and digital checkouts was on a rise.
+This pattern made sense for book checkouts because during the pandemic the lockdown was strongly
+affecting the types of checkouts people were doing.
 
-Here's an example of how to run an R script inside an RMarkdown file:
+### Top 10 authors who had the most book checkouts in 2020-2023
 
-``````{r, echo = FALSE, code = readLines("chart2_example.R")}
-```
+I found out the top 10 authors who had the most books checked out in 2020-2023.
+This was to see which author was had the most attention towards their books.
 
-### Your Choice
+``````{r, echo = FALSE, results='hide', warning=FALSE, message=FALSE, code = readLines("chart2.R")}
+``````
 
-The last chart is up to you. It could be a line plot, scatter plot, histogram, bar plot, stacked bar plot, and more. Here are some requirements to help guide your design:
+### Top 5 most checked out material type between 2020-2023
 
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear legend title
+I wanted to find out the most check outed type between the years of 2020-2023.
+It is interesting that physical copies of books were higher than audio books because I assume that
+audio books were becoming a trend during those years but it seems like physical copies still sits above.
 
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, code = readLines("chart2_example.R")}
-```
+``````{r, echo = FALSE, results='hide', warning=FALSE, message=FALSE, code = readLines("chart3.R")}
+``````
 
 
